@@ -1,0 +1,8 @@
+Hemanth's Recycler View Challenge:
+1. Made a Recycler View
+2. Dark Mode (You're Welcome to save your eyes)
+3. Change of Title Bar (Customisation :) )
+4. You can change the style by clicking a button to grid View (Looked Really Dope)
+5. Progress Bar while loading images
+6. It will Notify you if it fails to download any image
+7. Material Fonts(Imported Raleway Fonts suggested by Material Guidelines) and Design used! (Looks Clean)

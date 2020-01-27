@@ -2,7 +2,11 @@ package com.acmvit.androidchallenge1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.acmvit.androidchallenge1.R;
 
@@ -12,6 +16,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button henlo  = (Button) findViewById(R.id.btn_hemanth);
+        henlo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent letsdothis = new Intent(MainActivity.this, HemanthActivity.class);
+                MainActivity.this.startActivity(letsdothis);
+            }
+        });
 
         /* Steps Needed to be followed:
 
