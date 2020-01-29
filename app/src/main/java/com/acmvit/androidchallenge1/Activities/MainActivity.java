@@ -18,11 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button henlo  = (Button) findViewById(R.id.btn_hemanth);
-
         henlo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "HELLO!",Toast.LENGTH_LONG).show();
                 Intent letsdothis = new Intent(MainActivity.this, HemanthActivity.class);
                 MainActivity.this.startActivity(letsdothis);
             }

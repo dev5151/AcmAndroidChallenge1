@@ -1,5 +1,6 @@
 package com.acmvit.androidchallenge1.models.HemanthsModels;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,10 +29,12 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
 
     List<HumanoidData> humanoids;
     public Boolean isViewWithStag;
+    public Context mContext;
 
-    public HumanoidAdapter(List<HumanoidData> humanoids,Boolean isViewWithStag) {
+    public HumanoidAdapter(List<HumanoidData> humanoids,Boolean isViewWithStag,Context mContext) {
         this.humanoids = humanoids;
         this.isViewWithStag = isViewWithStag;
+        this.mContext = mContext;
     }
 
     @NonNull
@@ -45,11 +49,6 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
     public void onBindViewHolder(@NonNull HumanoidViewHolder holder, int position) {
         holder.humanoidTitle.setText(humanoids.get(position).name);
         holder.humanoidReleased.setText(humanoids.get(position).released);
-        //HumanoidViewHolder.HumanoidPhotoPhoto.setImageResource(persons.get(i).photoId);
-        /*CircularProgressBar circularProgressDrawable = new CircularProgressDrawable(this);
-        circularProgressDrawable.strokeWidth = 5f
-        circularProgressDrawable.centerRadius = 30f
-        circularProgressDrawable.start()*/
         try {
             final ProgressBar progressBar = holder.loading;
             Glide.with(holder.humanoidPhoto.getContext())
@@ -60,6 +59,7 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                             progressBar.setVisibility(View.GONE);
+                            Toast.makeText(mContext,"Please change your Network Operator! Your Network Operator doesn't allow access to sites!",Toast.LENGTH_LONG).show();
                             return false;
                         }
 

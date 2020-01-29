@@ -41,7 +41,7 @@ public class HemanthActivity extends AppCompatActivity {
         LinearLayoutManager rvLayoutManagerHem = new LinearLayoutManager(this);
         rv_hem.setLayoutAnimation(animation);
         rv_hem.setLayoutManager(rvLayoutManagerHem);
-        HumanoidAdapter adapter = new HumanoidAdapter(andros,isViewWithStag);
+        HumanoidAdapter adapter = new HumanoidAdapter(andros,isViewWithStag,this);
         rv_hem.setAdapter(adapter);
     }
 
@@ -85,7 +85,7 @@ public class HemanthActivity extends AppCompatActivity {
             case R.id.action_grid:
                 supportInvalidateOptionsMenu();
                 isViewWithStag = !isViewWithStag;
-                HumanoidAdapter adapter = new HumanoidAdapter(andros,isViewWithStag);
+                HumanoidAdapter adapter = new HumanoidAdapter(andros,isViewWithStag,this);
                 RecyclerView rv_hem = (RecyclerView)findViewById(R.id.rv_hemanth);
                 rv_hem.setLayoutManager(isViewWithStag ? new LinearLayoutManager(this) : new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
                 int resId = R.anim.layout_anim;
