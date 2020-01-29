@@ -1,34 +1,42 @@
 package com.acmvit.androidchallenge1.models.HemanthsModels;
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.acmvit.androidchallenge1.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 
-import java.io.File;
 import java.util.List;
 
 public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.HumanoidViewHolder> {
 
     List<HumanoidData> humanoids;
+    public Boolean isViewWithStag;
 
-    public HumanoidAdapter(List<HumanoidData> humanoids) {
+    public HumanoidAdapter(List<HumanoidData> humanoids,Boolean isViewWithStag) {
         this.humanoids = humanoids;
+        this.isViewWithStag = isViewWithStag;
     }
 
     @NonNull
     @Override
     public HumanoidViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.model_hemanth, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(isViewWithStag ? R.layout.model_hemanth: R.layout.model2_hemanth,parent,false);
         HumanoidViewHolder humanoidViewHolder = new HumanoidViewHolder(v);
         return humanoidViewHolder;
     }
@@ -38,9 +46,29 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
         holder.humanoidTitle.setText(humanoids.get(position).name);
         holder.humanoidReleased.setText(humanoids.get(position).released);
         //HumanoidViewHolder.HumanoidPhotoPhoto.setImageResource(persons.get(i).photoId);
+        /*CircularProgressBar circularProgressDrawable = new CircularProgressDrawable(this);
+        circularProgressDrawable.strokeWidth = 5f
+        circularProgressDrawable.centerRadius = 30f
+        circularProgressDrawable.start()*/
         try {
+            final ProgressBar progressBar = holder.loading;
             Glide.with(holder.humanoidPhoto.getContext())
                     .load(humanoids.get(position).imgLinko)
+
+
+                    .listener(new RequestListener<Drawable>() {
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                            progressBar.setVisibility(View.GONE);
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                            progressBar.setVisibility(View.GONE);
+                            return false;
+                        }
+                    })
                     .centerCrop()
                     .override(300,300)
                     .into((holder).getImage());
@@ -64,6 +92,7 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
         TextView humanoidTitle;
         TextView humanoidReleased;
         ImageView humanoidPhoto;
+        ProgressBar loading;
 
         HumanoidViewHolder(View itemView) {
             super(itemView);
@@ -71,6 +100,7 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
             humanoidTitle = (TextView) itemView.findViewById(R.id.title_hemanth_model);
             humanoidReleased = (TextView) itemView.findViewById(R.id.released_hemanth_model);
             humanoidPhoto = (ImageView) itemView.findViewById(R.id.image_hemanth_model);
+            loading = (ProgressBar) itemView.findViewById(R.id.progressBar_hemanth);
         }
         public ImageView getImage() {
             return humanoidPhoto;
