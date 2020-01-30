@@ -43,6 +43,7 @@
         <Button
             android:id="@+id/btn_dinesh"
             android:layout_rowWeight="1"
+            android:background="@drawable/button_round"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:text="DINESH'S ACTIVITY" />

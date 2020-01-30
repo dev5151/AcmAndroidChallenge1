@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/challenge"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -15,8 +15,9 @@
         <activity android:name=".Activities.AaryanActivity" />
         <activity android:name=".Activities.ShreyashActivity" />
         <activity android:name=".Activities.DhaneshActivity" />
-        <activity android:name=".Activities.DaneshActivity" />
-        <activity android:name=".Activities.DineshActivity" />
+        <activity android:name=".Activities.DineshActivity"
+            android:theme="@style/AppTheme1"
+            />
         <activity android:name=".Activities.HemantActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
@@ -26,5 +27,6 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
