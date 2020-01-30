@@ -53,8 +53,6 @@ public class HumanoidAdapter extends RecyclerView.Adapter<HumanoidAdapter.Humano
             final ProgressBar progressBar = holder.loading;
             Glide.with(holder.humanoidPhoto.getContext())
                     .load(humanoids.get(position).imgLinko)
-
-
                     .listener(new RequestListener<Drawable>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

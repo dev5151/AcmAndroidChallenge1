@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button henlo  = (Button) findViewById(R.id.btn_hemanth);
-        henlo.setOnClickListener(new View.OnClickListener() {
+        Button hemanthButton  = (Button) findViewById(R.id.btn_hemanth);
+        hemanthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent letsdothis = new Intent(MainActivity.this, HemanthActivity.class);
