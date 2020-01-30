@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.acmvit.androidchallenge1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.AmitKrishnaActivity"></activity>
         <activity android:name=".Activities.NiyanthaActivity" />
@@ -17,7 +20,9 @@
         <activity android:name=".Activities.DhaneshActivity" />
         <activity android:name=".Activities.DaneshActivity" />
         <activity android:name=".Activities.DineshActivity" />
-        <activity android:name=".Activities.HemantActivity" />
+        <activity android:name=".Activities.HemanthActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+        </activity>
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

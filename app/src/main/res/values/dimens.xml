@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="imageView_medPadding">12dp</dimen>
+    <dimen name="imageView_smallPadding">8dp</dimen>
+    <dimen name="textView_smallPadding">4dp</dimen>
+    <dimen name="textView_medPadding">8dp</dimen>
+    <dimen name="textView_largePadding">16dp</dimen>
+    <dimen name="cardView_medPadding">8dp</dimen>
+    <dimen name="progressBar_padding">40dp</dimen>
+</resources>
