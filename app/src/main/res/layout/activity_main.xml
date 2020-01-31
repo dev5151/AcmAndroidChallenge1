@@ -59,6 +59,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:background="#94fc13"
             android:text="DHANESH'S ACTIVITY" />
 
         <Button
