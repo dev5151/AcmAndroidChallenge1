@@ -8,18 +8,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.acmvit.androidchallenge1.R;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
-
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class DineshAdapter extends RecyclerView.Adapter<DineshAdapter.ViewHolder>{
 
     private static final String TAG = "DineshAdapter";
@@ -29,7 +23,7 @@ public class DineshAdapter extends RecyclerView.Adapter<DineshAdapter.ViewHolder
     private ArrayList<String> mDescription=new ArrayList<>();
     private Context mContext;
 
-    public DineshAdapter(Context mContext,ArrayList<String> mImageNames, ArrayList<String> mImages ,ArrayList<String> mDescription) {
+    public DineshAdapter(Context mContext,ArrayList<String> mImageNames, ArrayList<String> mImages , ArrayList<String> mDescription) {
         this.mImageNames = mImageNames;
         this.mImages = mImages;
         this.mDescription=mDescription;
@@ -40,7 +34,7 @@ public class DineshAdapter extends RecyclerView.Adapter<DineshAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -64,7 +58,7 @@ public class DineshAdapter extends RecyclerView.Adapter<DineshAdapter.ViewHolder
             public void onClick(View v) {
                 Log.d(TAG, "onClick: clicked on: "+mImageNames.get(position));
 
-                Toast.makeText(mContext,mImageNames.get(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mImageNames.get(position), Toast.LENGTH_SHORT).show();
 
             }
         });

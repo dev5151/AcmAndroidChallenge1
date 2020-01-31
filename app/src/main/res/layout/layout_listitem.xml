@@ -7,41 +7,32 @@
     android:background="@color/colorAccent1"
     android:padding="15dp"
     android:id="@+id/parent_layout">
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        app:cardBackgroundColor="#cdcdcd"
-
+        app:cardBackgroundColor="@color/darkergrey"
         android:layout_height="match_parent"
         app:cardCornerRadius="16dp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        app:cardBackgroundColor="#f2f2f2"
+        app:cardBackgroundColor="@color/darkgrey"
         app:cardUseCompatPadding="true"
         android:layout_height="match_parent"
         app:cardElevation="6dp"
         android:layout_margin="5dp"
         app:cardCornerRadius="16dp">
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="6dp"
-        app:cardBackgroundColor="#ffffff"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         android:layout_margin="5dp"
         app:cardUseCompatPadding="true">
-
-
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,13 +41,11 @@
             android:padding="15dp"
             android:id="@+id/image_name"
             android:layout_marginTop="15dp"
-            android:textColor="#ffffff"
+            android:textColor="@color/white"
             android:background="@drawable/rounded_corner"
             android:layout_gravity="center_horizontal"
             android:textSize="35sp"
             />
-
-
     <com.makeramen.roundedimageview.RoundedImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/image"
@@ -66,16 +55,13 @@
         android:layout_gravity="center_horizontal"
         android:scaleType="fitCenter"
         app:riv_corner_radius="30dip"
-
-
         />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="               If you're working with an existing view it can be a lot of work creating a new set of LayoutParams from scratch. Instead - you can grab the view's existing LayoutParams, edit these, and then apply them to the view to update its LayoutParams using setLayoutParams()"
+        android:text="description"
         android:textSize="18sp"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:padding="15dp"
         android:background="@drawable/rounded_corner"
         android:layout_marginBottom="20dp"
@@ -83,14 +69,8 @@
         android:layout_marginRight="20dp"
         android:id="@+id/description"
         />
-
-
-
-
     </LinearLayout>
-
     </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

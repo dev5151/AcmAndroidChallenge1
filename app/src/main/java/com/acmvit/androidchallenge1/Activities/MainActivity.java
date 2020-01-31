@@ -11,16 +11,16 @@ import com.acmvit.androidchallenge1.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button dinesh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button=(Button)findViewById(R.id.btn_dinesh);
+        dinesh=findViewById(R.id.btn_dinesh);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        dinesh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this,DineshActivity.class);
