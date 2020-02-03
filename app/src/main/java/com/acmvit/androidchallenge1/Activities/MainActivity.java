@@ -11,6 +11,8 @@ import com.acmvit.androidchallenge1.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button dinesh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        dinesh=findViewById(R.id.btn_dinesh);
+
+        dinesh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,DineshActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         /* Steps Needed to be followed:
 
