@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class load_image_activity extends AppCompatActivity {
@@ -38,6 +39,8 @@ public class load_image_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_image_activity);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Select Images");
+
         items = Utils.getArrayobj().list;
         view = findViewById(R.id.webview);
         view.loadUrl("https://www.google.com/");

@@ -15,6 +15,7 @@ import com.acmvit.androidchallenge1.Models.Utils;
 import com.acmvit.androidchallenge1.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AmitKrishnaActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class AmitKrishnaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amit_krishna);
         //Log.d("SIZE", String.valueOf(urls.size()));
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Favourite Images");
         items = Utils.getArrayobj().list;
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
