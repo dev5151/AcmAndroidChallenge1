@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.acmvit.androidchallenge1">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.AmitKrishnaActivity"></activity>
+        <activity android:name=".Activities.load_image_activity"
+            android:parentActivityName=".Activities.AmitKrishnaActivity">
+
+        </activity>
+        <activity android:name=".Activities.AmitKrishnaActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activities.NiyanthaActivity" />
         <activity android:name=".Activities.AmitAgarwalActivity" />
         <activity android:name=".Activities.AaryanActivity" />
@@ -19,12 +31,12 @@
         <activity android:name=".Activities.DineshActivity" />
         <activity android:name=".Activities.HemantActivity" />
         <activity android:name=".Activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
